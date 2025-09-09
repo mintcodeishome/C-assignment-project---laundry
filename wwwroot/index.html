@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSafi Laundry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <i class="fas fa-tshirt"></i>
+        </div>
+        <h1>TeamSafi Laundry</h1>
+        <p class="subtitle">Select your clothes and get instant pricing.</p>
+
+        <form id="laundry-form" action="/submit" method="post">
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-user"></i>
+                    <span>Personal Information</span>
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="text" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="section-title">
+                    <i class="fas fa-tshirt"></i>
+                    <span>Select Clothes</span>
+                </div>
+
+                <div class="clothes-grid">
+                    <div class="clothes-item">
+                        <div class="clothes-info">
+                            <span class="clothes-name">Shirts</span>
+                            <span class="clothes-price">50 KES each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn minus" data-item="shirts">-</button>
+                            <input type="number" class="quantity-input" name="shirts" min="0" value="0">
+                            <button type="button" class="quantity-btn plus" data-item="shirts">+</button>
+                        </div>
+                    </div>
+
+                    <div class="clothes-item">
+                        <div class="clothes-info">
+                            <span class="clothes-name">Trousers</span>
+                            <span class="clothes-price">70 KES each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn minus" data-item="trousers">-</button>
+                            <input type="number" class="quantity-input" name="trousers" min="0" value="0">
+                            <button type="button" class="quantity-btn plus" data-item="trousers">+</button>
+                        </div>
+                    </div>
+
+                    <div class="clothes-item">
+                        <div class="clothes-info">
+                            <span class="clothes-name">Suits</span>
+                            <span class="clothes-price">150 KES each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn minus" data-item="suits">-</button>
+                            <input type="number" class="quantity-input" name="suits" min="0" value="0">
+                            <button type="button" class="quantity-btn plus" data-item="suits">+</button>
+                        </div>
+                    </div>
+
+                    <div class="clothes-item">
+                        <div class="clothes-info">
+                            <span class="clothes-name">Bedsheets</span>
+                            <span class="clothes-price">100 KES each</span>
+                        </div>
+                        <div class="quantity-control">
+                            <button type="button" class="quantity-btn minus" data-item="bedsheets">-</button>
+                            <input type="number" class="quantity-input" name="bedsheets" min="0" value="0">
+                            <button type="button" class="quantity-btn plus" data-item="bedsheets">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-section" id="total-section">
+                <div class="section-title">
+                    <i class="fas fa-receipt"></i>
+                    <span>Order Summary</span>
+                </div>
+                <div id="itemized-bill">
+                    <!-- Itemized bill will be inserted here -->
+                </div>
+                <div class="total-display">
+                    <span>Total:</span>
+                    <span id="total-amount">0 KES</span>
+                </div>
+            </div>
+
+            <button type="submit">
+                <i class="fas fa-paper-plane"></i>
+                Submit Order
+            </button>
+        </form>
+    </div>
+
+    <div class="notification" id="notification">
+        <i class="fas fa-check-circle"></i>
+        <span>Your order has been calculated!</span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
